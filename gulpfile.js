@@ -10,3 +10,14 @@ gulp.task('browser-sync', function() {
   });
   gulp.watch("./*.html").on('change', browserSync.reload);
 });
+
+
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
+ 
+gulp.task('minimizecss', function () {
+    return gulp.src('dist/*.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('dist'));
+});
