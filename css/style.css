@@ -343,6 +343,32 @@ template {
   color: #E3B873;
   text-transform: uppercase; }
 
+.hero {
+  position: relative;
+  background: #131313 url("../img/hero-bg.png") no-repeat center/cover;
+  height: 100vh;
+  color: #fff; }
+  .hero__instagram {
+    position: absolute;
+    left: 0;
+    top: 0;
+    mam-width: 8px;
+    height: 100%; }
+
+.instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #131313; }
+  .instagram__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #E3B873;
+    transform: rotate(90deg); }
+
+.title {
+  margin: 0; }
+
 body {
   font-family: 'Futura Book', sans-serif;
   font-size: 14px; }
