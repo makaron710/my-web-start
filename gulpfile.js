@@ -6,7 +6,7 @@ var rename      = require('gulp-rename');
 
 // Compile sass into CSS & auto-inject into browsers | компилятор sass в css
 function serveSass() {
-    return src("./sass/*.sass")
+    return src("./sass/**/*.sass", "./scss/**/*.scss")
         .pipe(sass())
         .pipe(dest("./css"))
         .pipe(browserSync.stream());
@@ -22,6 +22,7 @@ function bs() {
     });
     watch("./*.html").on('change', browserSync.reload);
     watch("./sass/**/*.sass", serveSass);
+    watch("./scss/**/*.scss", serveSass);
     watch("./js/*.js").on('change', browserSync.reload);
 };
 
