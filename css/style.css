@@ -331,6 +331,11 @@ template {
   margin: auto; }
 
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
   background-color: #131313;
   padding: 24px 0; }
 
@@ -345,6 +350,7 @@ template {
 
 .hero {
   position: relative;
+  padding-top: 90px;
   background: #131313 url("../img/hero-bg.png") no-repeat center/cover;
   height: 100vh;
   color: #fff; }
@@ -368,6 +374,9 @@ template {
 
 .title {
   margin: 0; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
 
 body {
   font-family: 'Futura Book', sans-serif;
