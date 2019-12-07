@@ -322,9 +322,15 @@ template {
   border: none;
   border-radius: 2px;
   text-transform: uppercase; }
+  .button:hover {
+    cursor: pointer; }
   .button--primary {
     background-color: #E3B873;
-    color: #fff; }
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+    transition: box-shadow 0.3s; }
+    .button--primary:hover {
+      box-shadow: none; }
   .button--outline {
     border: 1px solid #fff;
     color: #fff;
@@ -353,6 +359,21 @@ template {
   color: #E3B873;
   text-transform: uppercase; }
 
+.nav__item {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 40px;
+  text-transform: uppercase;
+  transition: color 0.2s; }
+  .nav__item:hover {
+    color: #E3B873; }
+
+.phone {
+  color: #E3B873; }
+
+.contacts__phone {
+  margin-right: 45px; }
+
 .hero {
   position: relative;
   display: flex;
@@ -360,7 +381,16 @@ template {
   background: #131313 url("../img/hero-bg.png") no-repeat center/cover;
   height: 100vh;
   color: #fff; }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 19, 19, 0.7); }
   .hero__content {
+    position: relative;
     max-width: 50%; }
   .hero__text {
     font-size: 22px;
@@ -387,6 +417,14 @@ template {
     text-decoration: none;
     text-transform: uppercase;
     color: #fff; }
+    .hero__scroll-down::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border: 1px solid #E3B873;
+      border-radius: 50%;
+      margin-left: 12px;
+      background: url("../img/arrow-down.svg") no-repeat center; }
 
 .instagram {
   display: flex;
@@ -394,10 +432,19 @@ template {
   align-items: center;
   background: #131313; }
   .instagram__link {
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     text-decoration: none;
     color: #E3B873;
-    transform: rotate(90deg); }
+    transform: rotate(90deg);
+    line-height: 0.8; }
+    .instagram__link::after {
+      content: '';
+      width: 50px;
+      height: 1px;
+      background: #E3B873;
+      margin-left: 8px; }
 
 .title {
   margin: 0;
@@ -414,15 +461,3 @@ template {
 body {
   font-family: 'Futura Book', sans-serif;
   font-size: 14px; }
-
-.nav__item {
-  text-decoration: none;
-  color: #fff;
-  margin-left: 40px;
-  text-transform: uppercase; }
-
-.phone {
-  color: #E3B873; }
-
-.contacts__phone {
-  margin-right: 45px; }
