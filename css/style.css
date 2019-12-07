@@ -348,6 +348,22 @@ body {
   font-family: 'Futura Book', sans-serif;
   font-size: 14px; }
 
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Yeseva One", cursive; }
+  .section-title__image {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .section-title__image::before, .section-title__image::after {
+      content: '';
+      margin-left: 7px;
+      margin-right: 10px;
+      width: 32px;
+      height: 2px;
+      background-color: #E3B873; }
+
 .header {
   position: fixed;
   left: 0;
@@ -449,8 +465,7 @@ body {
     .instagram__link::after {
       content: '';
       width: 50px;
-      height: 1px;
-      background: #E3B873;
+      border: 1px solid #E3B873;
       margin-left: 8px; }
 
 .title {
