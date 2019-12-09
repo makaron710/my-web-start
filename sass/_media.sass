@@ -1,0 +1,58 @@
+@media screen and ( max-width: 1200px )
+  html
+    font-size: 12px
+  .nav
+    &__item
+      margin-left: 1rem
+@media screen and ( max-width: 992px )
+  .nav
+    display: none
+@media screen and ( max-width: 768px )
+  .hero
+    &__instagram
+      display: none
+    &__content
+      margin-left: 0
+      max-width: 40rem
+@media screen and ( max-width: 576px )
+  .contacts
+    &__phone
+      margin-right: 0
+      color: $light
+    &__button
+      display: none
+  .title
+    font-size: 1.917rem
+  .hero
+    background:  $dark url('../img/hero-bg-mobile.png') no-repeat center / cover
+    &__scroll-down
+      display: none
+    &__content
+      max-width: 22.86rem
+    &__text
+      font-size: 1.24rem
+      margin-bottom: 2.28rem
+    &__button
+      display: block
+      min-width: 22.86rem
+      margin-bottom: 1.85rem
+@media screen and ( max-width: 414px )
+  .hero
+    max-height: 530px
+
+    &__title
+      line-height: 2rem
+      font-size: 1.91rem
+    &__text
+      line-height: 2rem  
+      font-size: 1.5rem
+    &__content
+      max-width: 100%     
+    &__button
+      display: block
+      width: 100%
+      margin-bottom: 1.85rem
+@media screen and ( max-height: 520px )
+  .hero
+    &__scroll-down
+      display: none 
