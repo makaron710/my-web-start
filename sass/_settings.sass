@@ -11,8 +11,9 @@ img
   padding: 60px 0
   &-title
     text-align: center
-    text-transform: uppercase
-    font-family: "Yeseva One", cursive
+    &__heading
+      font-family: "Yeseva One", cursive
+      text-transform: uppercase
     &__image
       display: flex
       justify-content: center
@@ -24,4 +25,22 @@ img
         width: 32px
         height: 2px
         background-color: $primary
+    &__description
+      margin: auto
+      margin-top: 1.92rem
+      font-size: 1.07rem
+      line-height: 135.84%
+      max-width: 25.5rem
+
+@media screen and ( max-width: 760px )
+  .section
+    &-title
+      &__heading
+        font-size: 1.83rem
+      &__description
+        font-size: 1.25rem
+
+    
+
+
         
