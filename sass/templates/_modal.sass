@@ -1,0 +1,66 @@
+.modal
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  z-index: 199
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  height: 100%
+  width: 100%
+  background-color: rgba($dark, 0.6)
+  display: flex
+  justify-content: center
+  align-items: center
+  &--visible
+    opacity: 1
+    visibility: visible
+  &__dialog
+    padding: 2.357rem 3.5rem 1.929rem 3.5rem
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    position: relative
+    background: $dark url('../img/bg-modal.svg') no-repeat center / 100%
+    max-width: 36.143rem
+    max-height: 36.357rem
+    color: $light
+  &__title
+    margin: 0
+    margin-bottom: 2.429rem
+    font-family: 'Yeseva One', cursive
+    font-size: 1.357rem
+    font-weight: normal
+    line-height: 1.857rem
+    text-align: center
+    max-width: 25.857rem
+  &__close
+    margin: 0.952rem 1.024rem
+    position: absolute
+    width: 28px
+    height: 28px
+    background: transparent url('../img/close.svg') no-repeat center
+    top: 0
+    right: 0
+    border: none
+    cursor: pointer
+  &__form
+    display: flex
+    flex-direction: column 
+  &__input
+    width: 29.143rem
+    margin-bottom: 3.429rem
+    &:last-of-type
+      margin-bottom: 1.14rem
+  &__policy
+    margin-bottom: 2.781rem
+  &__button
+    align-self: flex-end
+    width: 15.214rem
+    padding: 1.357rem 1.5rem
+    font-weight: 500
+    font-size: 0.929rem
+    line-height: 1.286rem
+    text-transform: uppercase

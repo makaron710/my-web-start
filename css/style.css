@@ -339,6 +339,47 @@ template {
     color: #fff;
     background: transparent; }
 
+.label {
+  font-family: 'Futura Book';
+  font-weight: normal;
+  font-size: 1.071rem; }
+  .label--light {
+    color: rgba(255, 255, 255, 0.5); }
+
+.input {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.286rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 0.4rem;
+  padding-bottom: 0.5rem; }
+  .input::placeholder {
+    color: #fff;
+    margin-bottom: 0.643rem; }
+
+.policy__checkbox {
+  opacity: 0;
+  display: none; }
+  .policy__checkbox:checked + .policy__label::before {
+    background: #E3B873 url("../img/check.svg") no-repeat center/0.8rem; }
+
+.policy__label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 1.143rem;
+  line-height: 1.571rem; }
+  .policy__label::before {
+    content: '';
+    border: 1px solid #E3B873;
+    border-radius: 1px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 0.64rem; }
+
 .container {
   width: 85%;
   max-width: 1256px;
@@ -662,6 +703,73 @@ img {
     display: none; }
   .none-on-mobile {
     display: list-item; } }
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 199;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(19, 19, 19, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .modal--visible {
+    opacity: 1;
+    visibility: visible; }
+  .modal__dialog {
+    padding: 2.357rem 3.5rem 1.929rem 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: #131313 url("../img/bg-modal.svg") no-repeat center/100%;
+    max-width: 36.143rem;
+    max-height: 36.357rem;
+    color: #fff; }
+  .modal__title {
+    margin: 0;
+    margin-bottom: 2.429rem;
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.357rem;
+    font-weight: normal;
+    line-height: 1.857rem;
+    text-align: center;
+    max-width: 25.857rem; }
+  .modal__close {
+    margin: 0.952rem 1.024rem;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: transparent url("../img/close.svg") no-repeat center;
+    top: 0;
+    right: 0;
+    border: none;
+    cursor: pointer; }
+  .modal__form {
+    display: flex;
+    flex-direction: column; }
+  .modal__input {
+    width: 29.143rem;
+    margin-bottom: 3.429rem; }
+    .modal__input:last-of-type {
+      margin-bottom: 1.14rem; }
+  .modal__policy {
+    margin-bottom: 2.781rem; }
+  .modal__button {
+    align-self: flex-end;
+    width: 15.214rem;
+    padding: 1.357rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.929rem;
+    line-height: 1.286rem;
+    text-transform: uppercase; }
 
 @media screen and (max-width: 1200px) {
   html {
