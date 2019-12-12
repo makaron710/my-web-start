@@ -31,6 +31,18 @@ img
       font-size: 1.07rem
       line-height: 135.84%
       max-width: 25.5rem
+.scroll-up
+  transform: rotate(180deg)
+  position: fixed
+  z-index: 98
+  bottom: 0
+  margin-left: -1px
+  height: 100%
+  width: 30px
+  background: rgba($secondary, 0.3) url('../img/arrow-down-black.svg') no-repeat center / 80%
+  border: none
+  &:focus
+    outline: none
 
 @media screen and ( max-width: 760px )
   .section
@@ -39,6 +51,21 @@ img
         font-size: 1.83rem
       &__description
         font-size: 1.25rem
+  .scroll-up
+    transform: rotate(180deg)
+    position: fixed
+    z-index: 98
+    bottom: 0
+    right: 0
+    margin-right: 10px
+    margin-bottom: 10px
+    height: 50px
+    width: 50px
+    background: rgba($secondary, 0.5) url('../img/arrow-down-black.svg') no-repeat center / 50%
+    border: none
+    border-radius: 50%
+    &:focus
+      outline: none
 
     
 

@@ -68,6 +68,24 @@ $(document).ready(function(){
       modal.removeClass('modal--visible');
     }
   });
-  
+  // кнопка прокрутки вверх
+  $(() => {
+		$('.scroll-up').hide();
+
+		$(window).scroll(() => {
+			if ($(this).scrollTop() > 600){
+				$('.scroll-up').fadeIn();
+			} else{
+				$('.scroll-up').fadeOut();
+			}
+		});
+
+		$('.scroll-up').click(() => {
+			$('html').animate({
+				scrollTop:0
+			}, 500);
+
+		});
+	});
   
 });
