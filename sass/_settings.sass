@@ -9,11 +9,36 @@ img
   max-width: 100%
 .section
   padding: 60px 0
+  &--dark
+    background: $dark url('../img/bg-projects.png') no-repeat center / 100%
+    color: $light
   &-title
     text-align: center
+    &--left
+      text-align: left
+    &__text
+      max-width: 31.571rem
+      font-size: 1.29rem
+      line-height: 2.07rem
+    &__word
+      display: flex
+      align-items: center
+      &::after
+        content: ''
+        margin-left: 2.66rem
+        width: 92px
+        height: 1px
+        background-color: $primary   
     &__heading
       font-family: "Yeseva One", cursive
       text-transform: uppercase
+      font-weight: normal
+      &--primary
+        font-size: 1.928rem
+        line-height: 2.643rem
+        color: $primary
+        letter-spacing: -0.07em
+        font-style: normal
     &__image
       display: flex
       justify-content: center
@@ -25,7 +50,7 @@ img
         width: 32px
         height: 2px
         background-color: $primary
-    &__description
+    &__description 
       margin: auto
       margin-top: 1.92rem
       font-size: 1.07rem
