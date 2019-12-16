@@ -381,7 +381,7 @@ template {
     margin-right: 0.64rem; }
 
 .container {
-  width: 85%;
+  width: 86%;
   max-width: 1256px;
   margin: auto; }
 
@@ -431,25 +431,27 @@ img {
     .section-title--left {
       text-align: left; }
     .section-title__text {
-      max-width: 31.571rem;
-      font-size: 1.29rem;
-      line-height: 2.07rem; }
+      max-width: 35%;
+      font-size: 1.15rem;
+      line-height: 1.9rem; }
     .section-title__word {
       display: flex;
       align-items: center; }
       .section-title__word::after {
         content: '';
-        margin-left: 2.66rem;
-        width: 92px;
-        height: 1px;
+        margin-top: -0.1rem;
+        margin-left: 2.16rem;
+        width: 6rem;
+        height: 2px;
         background-color: #E3B873; }
     .section-title__heading {
       font-family: "Yeseva One", cursive;
       text-transform: uppercase;
       font-weight: normal; }
       .section-title__heading--primary {
-        font-size: 1.928rem;
-        line-height: 2.643rem;
+        margin-bottom: 1.4rem;
+        font-size: 1.728rem;
+        line-height: 2.4rem;
         color: #E3B873;
         letter-spacing: -0.07em;
         font-style: normal; }
@@ -548,7 +550,7 @@ img {
   display: flex;
   padding-top: 90px;
   background: #131313 url("../img/hero-bg.png") no-repeat center/cover;
-  height: 100vh;
+  height: 93vh;
   color: #fff; }
   .hero::before {
     content: '';
@@ -678,7 +680,7 @@ img {
   text-align: center;
   text-transform: uppercase; }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
   .types__card {
     margin-bottom: 5.7rem; } }
 
@@ -857,34 +859,41 @@ img {
 .projects {
   padding-top: 12.597rem; }
   .projects__section-title__text {
-    margin-bottom: 3.214rem; }
+    margin-bottom: 2.914rem; }
+  .projects__swiper-slide__image {
+    margin-top: 18px; }
+  .projects__col-35 {
+    width: 34%; }
+  .projects__col-55 {
+    margin-top: -15.95rem; }
 
 .swiper-slide {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 3.286rem; }
+  margin-bottom: 5.5rem; }
   .swiper-slide__text {
-    margin-bottom: 2.429rem; }
+    margin-bottom: 2.329rem; }
     .swiper-slide__text__heading {
       font-family: 'Yeseva One', sans-serif;
       font-weight: normal;
-      font-size: 1.286rem;
+      font-size: 1.15rem;
       line-height: 1.786rem;
       text-transform: uppercase;
       color: #E3B873;
-      margin-bottom: 9px;
+      margin-bottom: 2.2px;
       margin-top: 0; }
     .swiper-slide__text__value {
       font-family: 'Futura Book';
       font-weight: normal;
-      font-size: 1.071rem;
-      line-height: 1.429rem; }
+      font-size: 0.96rem;
+      line-height: 1.4rem; }
 
 .swiper-pagination-bullets {
   bottom: 14.6px !important;
   width: auto !important; }
 
 .swiper-pagination-bullet {
+  margin-right: 8px !important;
   opacity: 1 !important;
   background-color: rgba(255, 255, 255, 0.3) !important; }
   .swiper-pagination-bullet-active {
@@ -900,11 +909,31 @@ img {
     display: none; }
 
 .swiper-button-prev {
-  left: 0 !important;
-  background: url("../img/arrow-prev.svg") no-repeat center; }
+  margin-left: -8px;
+  background: url("../img/arrow-prev.svg") no-repeat left/80%; }
 
 .swiper-button-next {
-  background: url("../img/arrow-next.svg") no-repeat center; }
+  background: url("../img/arrow-next.svg") no-repeat right/80%; }
+
+@media screen and (max-width: 759px) {
+  .section-title--left {
+    text-align: center; }
+  .section-title__word {
+    justify-content: center; }
+    .section-title__word::after {
+      display: none; }
+  .section-title__text {
+    max-width: 25.5rem;
+    margin: auto;
+    text-align: center; }
+  .projects__col-35 {
+    width: 47%; }
+  .projects__col-45 {
+    width: 100%; }
+  .projects__col-55 {
+    width: 100%;
+    margin-top: 0;
+    order: -1; } }
 
 @media screen and (max-width: 1230px) {
   html {

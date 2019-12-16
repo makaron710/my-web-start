@@ -105,9 +105,16 @@ $(document).ready(function(){
   var next = $('.swiper-button-next');
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
+  var container = $('.container');
+  var wind = $(window);
 
-  bullets.css('left', prev.width()+10);
-  next.css('left', prev.width()+10+bullets.width()+10);
+  bullets.css('left', prev.width()+8);
+  next.css('left', prev.width()+8+bullets.width());
 
+  if (wind.width()<768) {
+    prev.css('left', (container.width()-prev.width()-8-bullets.width()-next.width())/2+8);
+    bullets.css('left', (container.width()-prev.width()-8-bullets.width()-next.width())/2+prev.width()+8);
+    next.css('left', ((container.width()-prev.width()-8-bullets.width()-next.width())/2)+prev.width()+8+bullets.width());
+  }
 
 });

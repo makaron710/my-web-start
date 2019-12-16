@@ -2,33 +2,44 @@
   padding-top: 12.597rem
   &__section-title
     &__text
-      margin-bottom: 3.214rem
+      margin-bottom: 2.914rem
+  &__swiper-slide
+    &__image
+      margin-top: 18px
+  &__col
+    &-35
+      width: 34%
+  &__col
+    &-55
+      margin-top: -15.95rem
+
 .swiper
   &-slide
     display: flex
     flex-wrap: wrap
-    margin-bottom: 3.286rem
+    margin-bottom: 5.5rem
     &__text
-      margin-bottom: 2.429rem
+      margin-bottom: 2.329rem
       &__heading
         font-family: 'Yeseva One', sans-serif
         font-weight: normal
-        font-size: 1.286rem
+        font-size: 1.15rem
         line-height: 1.786rem
         text-transform: uppercase
         color: $primary
-        margin-bottom: 9px
+        margin-bottom: 2.2px
         margin-top: 0
       &__value
         font-family: 'Futura Book'
         font-weight: normal
-        font-size: 1.071rem
-        line-height: 1.429rem
+        font-size: 0.96rem
+        line-height: 1.4rem
   &-pagination
     &-bullets
       bottom: 14.6px!important
       width: auto!important
     &-bullet
+      margin-right: 8px!important
       opacity: 1!important
       background-color: rgba($light, 0.3)!important
       &-active
@@ -43,8 +54,30 @@
       &::after
         display: none
     &-prev
-      left: 0!important
-      background: url('../img/arrow-prev.svg') no-repeat center
+      margin-left: -8px
+      background: url('../img/arrow-prev.svg') no-repeat left / 80%
     &-next
-      background: url('../img/arrow-next.svg') no-repeat center
-
+      background: url('../img/arrow-next.svg') no-repeat right / 80%
+@media screen and ( max-width: 759px )
+  .section
+    &-title
+      &--left
+        text-align: center
+      &__word
+        justify-content: center
+        &::after
+          display: none
+      &__text
+        max-width: 25.5rem
+        margin: auto
+        text-align: center
+  .projects
+    &__col
+      &-35
+        width: 47%
+      &-45
+        width: 100%
+      &-55
+        width: 100%
+        margin-top: 0
+        order: -1 
