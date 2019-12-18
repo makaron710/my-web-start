@@ -8,8 +8,8 @@
     display: flex
     margin: auto
     max-width: 58.357rem
-    min-height: 31rem
-    background: #000 url('../img/control/video-mask.jpg') no-repeat center
+    height: 31rem
+    background: #000 url('../img/control/video-mask.jpg') no-repeat center / cover
     box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15)
     &::before
       content: ''
@@ -19,6 +19,7 @@
       background-color: rgba($dark, 0.8)
   &__text
     margin-top: 4.571rem
+    margin-bottom: 4.357rem
     &::before
       margin-bottom: 1.829rem
   &__form
@@ -26,41 +27,114 @@
     flex-direction: row
     justify-content: space-between 
     margin: auto
-    margin-top: 4.357rem
-    width: 54.929rem
+    max-width: 54.929rem
     flex-wrap: wrap
     &__label
       font-size: 1.071rem
       line-height: 1.429rem
       color: rgba($dark, 0.5)
     &__input
-      font-weight: 500
-      font-size: 1.286rem
-      border: none
-      border-bottom:  1px solid rgba($dark, 0.15)
-      padding-top: 0.1rem
-      padding-bottom: 0.5rem
-      width: 16.5rem
-      margin-bottom: 2.543rem
-      &::placeholder
-        color: $dark
+      &-box
+        display: flex
+        flex-direction: column
+        &__input
+          font-weight: 500
+          font-size: 1.286rem
+          border: none
+          border-bottom:  1px solid rgba($dark, 0.15)
+          padding-top: 0.1rem
+          padding-bottom: 0.5rem
+          width: 16.5rem
+          margin-bottom: 2.543rem
+          &::placeholder
+            color: $dark
     &__policy
       display: flex
       flex-basis: 100%
       justify-content: center
       margin-bottom: 2.781rem
       order: 2
-    &__button
-      align-self: flex-start
-      width: 14.286rem
-      max-height: 3.643rem
-      padding: 1.357rem 1.5rem
-      font-weight: 500
-      font-size: 1.071rem
-      line-height: 1.286rem
-      text-transform: uppercase
+    &__button-box
+      &__button
+        align-self: flex-start
+        width: 14.286rem
+        max-height: 3.643rem
+        padding: 1.357rem 1.5rem
+        font-weight: 500
+        font-size: 1.071rem
+        line-height: 1.286rem
+        text-transform: uppercase
 .video
   &__play
     position: relative
+    width: 25%
     margin: auto
-    top: 5px
+    top: 5px 
+
+@media screen and ( max-width: 768px )
+  .control
+    &__form
+      &__input
+        &-box
+          flex-basis: 45%
+          margin-bottom: 1.886rem
+          &__input
+            width: 100%
+            margin-bottom: 0
+      &__policy
+        margin-bottom: 4.459rem
+      &__button
+        &-box
+          display: flex
+          flex-basis: 100%
+          justify-content: center
+          order: 3
+  .policy
+    &__label
+      width: 100%
+@media screen and ( max-width: 576px )
+  .control
+    background-color: $dark
+    color: $light
+    &__text
+      font-size: 1rem
+      line-height: 169.8%
+    &__video
+      width: 100%
+      height: 17.25rem
+    &__text
+      margin-bottom: 1.857rem
+    &__form
+      width: 100%
+      &__label
+        color: rgba($light, 0.5)
+      &__input
+        &-box
+          flex-basis: 100%
+          margin-bottom: 4.5rem
+          &__input
+            width: 100%
+            background: transparent
+            color: $light
+            border-bottom:  1px solid rgba($light, 0.15)
+            &::placeholder
+              color: $light
+      &__policy
+        margin-top: -2.67rem
+        margin-bottom: 4.459rem
+      &__button
+        &-box
+          display: flex
+          flex-basis: 100%
+          justify-content: center
+          order: 3
+@media screen and ( max-width: 414px )
+  .control
+    &__form
+      &__button
+        &-box
+          &__button
+            width: 100%
+   
+
+
