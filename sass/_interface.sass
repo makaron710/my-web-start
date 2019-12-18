@@ -26,7 +26,6 @@
   &--light
     color: rgba($light, 0.5)
 .input
-  color: $light
   font-weight: 500
   font-size: 1.286rem
   background: transparent
@@ -35,13 +34,27 @@
   padding-top: 0.4rem
   padding-bottom: 0.5rem
   &::placeholder
-    color: $light
     margin-bottom: 0.643rem
+  &-box
+    &--column
+      display: flex
+      flex-direction: column
+  &--dark
+    color: $light
+    font-weight: 500
+    font-size: 1.286rem
+    background: transparent
+    border: none
+    border-bottom:  1px solid rgba($light, 0.15)
+    padding-top: 0.4rem
+    padding-bottom: 0.5rem
+    &::placeholder
+      color: $light
+      margin-bottom: 0.643rem
 .policy
   &__checkbox
     opacity: 0
     display: none
-
     &:checked +
       .policy
         &__label
@@ -61,4 +74,6 @@
       height: 18px
       cursor: pointer
       margin-right: 0.64rem
+
+
   

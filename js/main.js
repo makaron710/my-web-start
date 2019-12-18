@@ -117,4 +117,6 @@ $(document).ready(function(){
     next.css('left', ((container.width()-prev.width()-8-bullets.width()-next.width())/2)+prev.width()+8+bullets.width());
   }
 
+  new WOW().init();
+
 });

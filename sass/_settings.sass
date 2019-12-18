@@ -10,10 +10,11 @@ img
 .section
   padding: 60px 0
   &--dark
-    background: $dark url('../img/bg-projects.png') no-repeat center / 100%
     color: $light
   &-title
     text-align: center
+    &--light
+      color: $light
     &--left
       text-align: left
     &__text
@@ -28,7 +29,7 @@ img
         margin-top: -0.1rem
         margin-left: 2.16rem
         width: 6rem
-        height: 2px
+        height: 0.143rem
         background-color: $primary   
     &__heading
       font-family: "Yeseva One", cursive
@@ -58,6 +59,20 @@ img
       font-size: 1.07rem
       line-height: 135.84%
       max-width: 25.5rem
+  &__text
+    font-size: 1.429rem
+    margin: auto
+    max-width: 40.786rem
+    text-align: center
+    font-weight: normal
+    line-height: 2.429rem 
+    &::before
+      display: block
+      content: ''
+      margin: auto
+      width: 3.929rem
+      height: 0.11rem
+      background-color: $primary
 .scroll-up
   transform: rotate(180deg)
   position: fixed
@@ -70,6 +85,8 @@ img
   border: none
   &:focus
     outline: none
+
+
 
 @media screen and ( max-width: 760px )
   .section
