@@ -117,6 +117,57 @@ $(document).ready(function(){
     next.css('left', ((container.width()-prev.width()-8-bullets.width()-next.width())/2)+prev.width()+8+bullets.width());
   }
 
+// Иинициализация wow
   new WOW().init();
 
+// Валидация формы
+  $('.form').each( function() {
+    $(this).validate({
+      // Класс, который будет присваиваться для элементов (полей) с ошибкой
+      errorClass: "invalid",
+
+      // Элемент с которым будет отображаться ошибка
+      errorLabelContainer: ".label",
+      wrapper: "label",
+      submitHandler: function() { alert("Submitted!") },
+
+/*       errorContainer: ".label",
+      errorLabelContainer: ".label",
+      wrapper: "div", debug:true,
+      submitHandler: function() { alert("Submitted!") }, */
+
+      // Правила
+      rules: {
+        userName: {
+          required: true,
+          minlength: 2,
+          maxlength: 15
+        },     
+        // строчное правило
+        userPhone: "required",
+        // правило-объект (блок)
+        userEmail: {
+          required: true,
+          email: true
+        }
+      }, // сообщения
+      messages: {
+        userName: {
+          required: " - Заполните поле",
+          minlength: "Имя должно быть не короче 2 символов",
+          maxlength: "Имя должно быть не длиннее 15 символов"
+        },
+        userPhone: " - Заполните поле",
+        userEmail: {
+          required: " - Заполните поле",
+          email: "Введите корректный email (name@domain.com)"
+        }
+      }
+    });
+  });
+
+// Маска для телефона
+$('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"});
+
+// End
 });

@@ -228,13 +228,13 @@
     
             <div class="control__form__input-box">
               <label for="user-name" class="label form__label control__form__label">Имя</label>
-              <input type="text" class="input form__input control__form__input-box__input" id="user-name" placeholder="Как вас зовут:">
+              <input type="text" name="userName" class="input form__input control__form__input-box__input" id="user-name" placeholder="Как вас зовут:">
             </div>
             <!-- /.form-box--column -->
 
             <div class="control__form__input-box">
               <label for="user-phone" class="label form__label control__form__label">Телефон</label>
-              <input type="tel" class="input form__input control__form__input-box__input" id="user-phone" placeholder="Ваш номер телефона:">
+              <input type="tel" name="userPhone" class="input form__input control__form__input-box__input" id="user-phone" placeholder="Ваш номер телефона:">
             </div>
             <!-- /.form-box--column -->
   
@@ -504,13 +504,13 @@
             
             <div class="input-box footer__input-box">
               <label for="user-name" class="label form__label label--light">Имя</label>
-              <input type="text" class="input input--dark form__input footer__input" id="user-name" placeholder="Как вас зовут:">
+              <input type="text" name="userName" class="input input--dark form__input footer__input" id="user-name" placeholder="Как вас зовут:">
             </div>
             <!-- /.input-box footer__input-box -->
 
             <div class="input-box footer__input-box">
               <label for="user-phone" class="label form__label label--light">Телефон</label>
-              <input type="tel" class="input input--dark form__input footer__input" id="user-phone" placeholder="Ваш номер телефона:">
+              <input type="tel" name="userPhone" class="input input--dark form__input footer__input" id="user-phone" placeholder="Ваш номер телефона:">
             </div>
             <!-- /.input-box footer__input-box -->
 
@@ -569,14 +569,23 @@
         <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами </h3>
         <form action="" class="form modal__form">
 
-          <label for="user-name" class="label form__label label--light">Имя</label>
-          <input type="text" class="input input--dark form__input modal__input" id="user-name" placeholder="Как вас зовут:">
+          <div class="input-box modal__input-box">
+            <label for="user-name" class="label form__label label--light">Имя</label>
+            <input type="text" name="userName" class="input input--dark form__input modal__input" id="user-name" placeholder="Как вас зовут:">
+          </div>
+          <!-- /.input-box modal__input-box -->
 
-          <label for="user-phone" class="label form__label label--light">Телефон</label>
-          <input type="tel" class="input input--dark form__input modal__input" id="user-phone" placeholder="Ваш номер телефона:">
+          <div class="input-box modal__input-box">
+            <label for="user-phone" class="label form__label label--light">Телефон</label>
+            <input type="tel" name="userPhone" class="input input--dark form__input modal__input" id="user-phone" placeholder="Ваш номер телефона:">
+          </div>
+          <!-- /.input-box modal__input-box -->
 
-          <label for="user-email" class="label form__label label--light">Email</label>
-          <input type="email" class="input input--dark form__input modal__input" id="user-email" placeholder="Ваш email">
+          <div class="input-box modal__input-box modal__input-box--last">
+            <label for="user-email" class="label form__label label--light">Email</label>
+            <input type="email" name="userEmail" class="input input--dark form__input modal__input" id="user-email" placeholder="Ваш email">
+          </div>
+          <!-- /.input-box modal__input-box -->
 
           <div class="policy modal__policy">
             <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
@@ -599,6 +608,8 @@
   crossorigin="anonymous"></script>  
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="js/wow.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.mask.min.js"></script>
   <script src="js/main.js"></script>
   </body>
 </html>

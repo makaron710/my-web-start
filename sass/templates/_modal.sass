@@ -28,7 +28,7 @@
     align-items: center
     flex-direction: column
     position: relative
-    background: $dark url('../img/bg-modal.svg') no-repeat center / 100%
+    background: $dark url('../img/modal/bg-modal.png') no-repeat center / 100%
     max-width: 36.143rem
     max-height: 36.357rem
     color: $light
@@ -55,10 +55,13 @@
     display: flex
     flex-direction: column 
   &__input
-    width: 29.143rem
-    margin-bottom: 3.429rem
-    &:last-of-type
-      margin-bottom: 1.14rem
+    &-box
+      display: flex
+      flex-direction: column
+      width: 29.143rem
+      margin-bottom: 3.429rem
+      &--last
+        margin-bottom: 1.14rem
   &__policy
     margin-bottom: 2.781rem
   &__button
