@@ -389,6 +389,8 @@ template {
     height: 18px;
     cursor: pointer;
     margin-right: 0.64rem; }
+  .policy__label--center {
+    justify-content: center; }
 
 .container {
   width: 86%;
@@ -434,6 +436,7 @@ img {
 .section {
   padding: 60px 0; }
   .section--dark {
+    background-color: #131313;
     color: #fff; }
   .section-title {
     text-align: center; }
@@ -847,7 +850,8 @@ img {
     margin-left: 0; } }
 
 .design {
-  background-color: #131313; }
+  background-color: #131313;
+  padding-bottom: 30rem; }
   .design__section-title {
     color: #fff;
     margin-bottom: 2.78rem; }
@@ -1091,6 +1095,58 @@ img {
       width: 100%;
       margin-top: 0;
       order: -1; } }
+
+.footer {
+  background: #131313 url("../img/footer/bg-footer.png") no-repeat center/cover;
+  padding-bottom: 0; }
+  .footer__wrap {
+    background: #181818 url("../img/footer/bg-footer-form.png") no-repeat center/cover;
+    max-width: 63rem;
+    margin: auto;
+    margin-top: -20rem;
+    margin-bottom: 3.714rem;
+    padding: 1rem;
+    padding-bottom: 2.4rem; }
+  .footer__title {
+    text-transform: uppercase;
+    font-family: 'Yeseva One', cursive;
+    font-weight: normal;
+    font-size: 1.429rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-bottom: 3.014rem; }
+  .footer__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 61%;
+    margin: auto; }
+  .footer__input {
+    padding-top: 0.2rem; }
+    .footer__input-box {
+      margin-bottom: 3.429rem;
+      display: flex;
+      flex-direction: column;
+      flex-basis: 44.5%; }
+      .footer__input-box--full-width {
+        flex-basis: 100%;
+        margin-bottom: 3.1rem; }
+  .footer__policy {
+    flex-basis: 100%;
+    margin-bottom: 3.571rem;
+    margin-left: -12px; }
+  .footer__button {
+    margin: auto;
+    font-size: 1.071rem;
+    line-height: 1.857rem;
+    text-align: center;
+    padding: 0.928rem 4.257rem; }
+  .footer__menu {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #131313;
+    padding: 47px 0; }
 
 @media screen and (max-width: 1230px) {
   html {
