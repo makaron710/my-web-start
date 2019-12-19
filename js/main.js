@@ -120,6 +120,7 @@ $(document).ready(function(){
 // Иинициализация wow
   new WOW().init();
 
+  
 // Валидация формы
   $('.form').each( function() {
     $(this).validate({
