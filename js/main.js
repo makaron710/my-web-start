@@ -166,8 +166,64 @@ $(document).ready(function(){
     });
   });
 
-// Маска для телефона
-$('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"});
+  
+  // Маска для телефона
+  $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"});
+
+  
+  // Функция ymaps.ready() будет вызвана, когда
+  // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+  ymaps.ready(init);
+  function init(){
+    // Создание карты.
+    var myMap = new ymaps.Map("map", {
+      center: [47.233497, 39.691180],
+      zoom: 18,
+      controls: ['routeButtonControl']
+    }, {
+        searchControlProvider: 'yandex#search'
+    }),
+
+    // Создаём макет содержимого.
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    ),
+
+    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Repair Design',
+          balloonContent: 'Пн - Пт: с 9:00 до 18:00'
+      }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: '../img/footer/map-marker.png',
+          // Размеры метки.
+          iconImageSize: [26, 42],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-10, -50]
+      });
+
+
+    myMap.geoObjects
+        .add(myPlacemark)
+
+    // Добавим элемент управления в левый угол карты
+    // и зададим начальную и конечную точки маршрута.
+    myMap.controls.add('routeButtonControl', {
+      size: "large",
+      float: "left",
+      floatIndex: 1000,
+    });
+    myMap.controls.get('routeButtonControl')
+      .routePanel.state.set({
+          fromEnabled: true,
+
+          to: [47.233497, 39.691180],
+          type: "auto"      
+    });
+  }
 
 // End
 });

@@ -1156,6 +1156,29 @@ img {
     background-color: #131313;
     padding: 47px 0; }
 
+.section-title {
+  max-width: 35rem;
+  margin: auto; }
+  .section-title__heading--primary {
+    font-weight: normal;
+    font-size: 1.429rem;
+    line-height: 2rem;
+    letter-spacing: normal;
+    margin-bottom: 1.857rem; }
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 73px;
+  margin-bottom: 3.071rem; }
+
+#map {
+  width: 66rem;
+  height: 33.2rem;
+  margin: auto;
+  margin-bottom: 4.643rem; }
+
 @media screen and (max-width: 1230px) {
   html {
     font-size: 12px; }
