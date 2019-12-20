@@ -39,7 +39,7 @@
 
 
       $mail->send();
-      echo 'Письмо отправлено';
+      header('Location: thenks.html');
   } catch (Exception $e) {
       echo "Письмо не отправлено. Код ошибки: {$mail->ErrorInfo}";
   }

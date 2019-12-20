@@ -127,10 +127,10 @@ $(document).ready(function(){
       // Класс, который будет присваиваться для элементов (полей) с ошибкой
       errorClass: "invalid",
 
-      // Элемент с которым будет отображаться ошибка
+/*       // Элемент с которым будет отображаться ошибка
       errorLabelContainer: ".label",
       wrapper: "label",
-      submitHandler: function() { alert("Submitted!") },
+      submitHandler: function() { alert("Submitted!") }, */
 
 /*       errorContainer: ".label",
       errorLabelContainer: ".label",
