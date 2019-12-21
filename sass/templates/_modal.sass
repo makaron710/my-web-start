@@ -13,6 +13,14 @@
   display: flex
   justify-content: center
   align-items: center
+  ::-webkit-scrollbar 
+    width: 0.5rem
+  ::-webkit-scrollbar-track
+    background-color: rgba($secondary, 0.8)
+    border-radius: 10px
+  ::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: rgba($dark-light, 0.8)
   &--visible
     opacity: 1
     visibility: visible
@@ -32,6 +40,7 @@
     max-width: 36.143rem
     max-height: 36.357rem
     color: $light
+    overflow-y: auto
   &__title
     margin: 0
     margin-bottom: 2.429rem
@@ -72,3 +81,5 @@
     font-size: 0.929rem
     line-height: 1.286rem
     text-transform: uppercase
+
+

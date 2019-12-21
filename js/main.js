@@ -129,8 +129,8 @@ $(document).ready(function(){
 
 /*       // Элемент с которым будет отображаться ошибка
       errorLabelContainer: ".label",
-      wrapper: "label",
-      submitHandler: function() { alert("Submitted!") }, */
+      wrapper: "label", */
+/*       submitHandler: function() { alert("Submitted!") }, */
 
 /*       errorContainer: ".label",
       errorLabelContainer: ".label",

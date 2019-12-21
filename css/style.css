@@ -962,6 +962,14 @@ img {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .modal ::-webkit-scrollbar {
+    width: 0.5rem; }
+  .modal ::-webkit-scrollbar-track {
+    background-color: rgba(149, 149, 149, 0.8);
+    border-radius: 10px; }
+  .modal ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(54, 54, 54, 0.8); }
   .modal--visible {
     opacity: 1;
     visibility: visible; }
@@ -980,7 +988,8 @@ img {
     background: #131313 url("../img/modal/bg-modal.png") no-repeat center/100%;
     max-width: 36.143rem;
     max-height: 36.357rem;
-    color: #fff; }
+    color: #fff;
+    overflow-y: auto; }
   .modal__title {
     margin: 0;
     margin-bottom: 2.429rem;
@@ -1155,16 +1164,15 @@ img {
     width: 100%;
     background-color: #131313;
     padding: 47px 0; }
-
-.section-title {
-  max-width: 35rem;
-  margin: auto; }
-  .section-title__heading--primary {
-    font-weight: normal;
-    font-size: 1.429rem;
-    line-height: 2rem;
-    letter-spacing: normal;
-    margin-bottom: 1.857rem; }
+  .footer__section-title {
+    max-width: 35rem;
+    margin: auto; }
+    .footer__section-title__heading--primary {
+      font-weight: normal;
+      font-size: 1.429rem;
+      line-height: 2rem;
+      letter-spacing: normal;
+      margin-bottom: 1.857rem; }
 
 .social {
   display: flex;
@@ -1178,6 +1186,14 @@ img {
   height: 33.2rem;
   margin: auto;
   margin-bottom: 4.643rem; }
+
+@media screen and (max-width: 992px) {
+  #map {
+    max-width: 100%; } }
+
+@media screen and (max-width: 576px) {
+  #map {
+    max-height: 18rem; } }
 
 @media screen and (max-width: 1230px) {
   html {
