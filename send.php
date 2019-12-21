@@ -28,10 +28,6 @@
       $mail->setFrom('sm710mh@gmail.com', 'Mailer');
       $mail->addAddress('joe@example.net');     // Add a recipient
 
-      // Attachments
-      $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-      $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-
       // Content
       $mail->isHTML(true);                                  // Set email format to HTML
       $mail->Subject = 'Новая заявка с сайта';
@@ -39,7 +35,7 @@
 
 
       $mail->send();
-      header('Location: thenks.html');
+      header('Location: thanks.html');
   } catch (Exception $e) {
       echo "Письмо не отправлено. Код ошибки: {$mail->ErrorInfo}";
   }
