@@ -57,10 +57,14 @@ $(document).ready(function(){
   modalBtn.on('click', switchModal);
   
   // при клике по объекту closeBtn вызвать функццию switchModal чтобы закрыть окно
-  closeBtn.on('click', switchModal);
+  closeBtn.on('click', () => {
+    $('.modal').removeClass('modal--visible modal-thank--visible');
+  });
 
   // при клике по объекту closeBtn вызвать функццию switchModal чтобы закрыть окно
-  closeOver.on('click', switchModal);
+  closeOver.on('click', () => {
+    $('.modal').removeClass('modal--visible modal-thank--visible');
+  });
 
   // при нажатии клавиши escape - удаление класса .modal--visible
   $(document).keyup(function(e) {
@@ -122,20 +126,10 @@ $(document).ready(function(){
 
   
 // Валидация формы
-  $('.form').each( function() {
+  $('.form').each( function validateForm() {
     $(this).validate({
       // Класс, который будет присваиваться для элементов (полей) с ошибкой
       errorClass: "invalid",
-
-/*       // Элемент с которым будет отображаться ошибка
-      errorLabelContainer: ".label",
-      wrapper: "label", */
-/*       submitHandler: function() { alert("Submitted!") }, */
-
-/*       errorContainer: ".label",
-      errorLabelContainer: ".label",
-      wrapper: "div", debug:true,
-      submitHandler: function() { alert("Submitted!") }, */
 
       // Правила
       rules: {
@@ -163,9 +157,60 @@ $(document).ready(function(){
           required: " - Заполните поле",
           email: "Введите корректный email (name@domain.com)"
         }
+      },
+
+      submitHandler:
+      function (/* event */form) {
+        //event.preventDefault(); // Отключение стандартного события (отправка через php)
+    //     if ( validateForm() ) { // если есть ошибки возвращает true
+    //      return false; // прерываем выполнение скрипта
+    //    }
+        $.ajax({
+          type: 'POST',
+          url: 'send.php',
+          data: $(form).serialize(), // Склеивание всех данных с формы
+          success: function (response) { // Сценарий для удачной отправки
+            console.log('данные ' + response);
+            $('#modal-form')[0].reset();
+            $('.modal').removeClass('modal--visible');
+            $('.modal-thank').toggleClass('modal-thank--visible');
+          },
+          error: function (jqXHR, textStatus, errorThrown) { // Сценарий для не удачной отправки
+            console.error(jqXHR + " " + textStatus);
+          }
+          
+        });
+        return false; 
       }
+
+
+      
     });
   });
+
+/*   // Отправка формы через Ajax
+  $('#modal-form').submit(function (event) {
+    event.preventDefault(); // Отключение стандартного события (отправка через php)
+//     if ( validateForm() ) { // если есть ошибки возвращает true
+//      return false; // прерываем выполнение скрипта
+//    }
+    $.ajax({
+      type: 'POST',
+      url: 'send.php',
+      data: $(this).serialize(), // Склеивание всех данных с формы
+      success: function (response) { // Сценарий для удачной отправки
+        console.log('данные ' + response);
+        $('#modal-form')[0].reset();
+        switchModal();
+        $('.modal-thank').toggleClass('modal-thank--visible');
+      },
+      error: function (jqXHR, textStatus, errorThrown) { // Сценарий для не удачной отправки
+        console.error(jqXHR + " " + textStatus);
+      }
+      
+    });
+  }) */
+  
 
   
   // Маска для телефона
@@ -198,7 +243,7 @@ $(document).ready(function(){
           // Необходимо указать данный тип макета.
           iconLayout: 'default#image',
           // Своё изображение иконки метки.
-          iconImageHref: '../img/footer/map-marker.png',
+          iconImageHref: 'img/footer/map-marker.png',
           // Размеры метки.
           iconImageSize: [26, 42],
           // Смещение левого верхнего угла иконки относительно

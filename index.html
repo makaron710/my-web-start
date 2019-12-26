@@ -57,7 +57,7 @@
         <div class="container">
 
           <div class="section-title section-title--left wow fadeInRight" data-wow-delay="0s">
-            <h2 class="section-title__heading section-title__heading--primary">Завершенные <div class="section-title__word">проекты</div> </h2>
+            <h2 class="section-title__heading section-title__heading--primary">Завершенные <span class="section-title__word">проекты</span> </h2>
             <!-- /.section-title__heading -->
             <p class="projects__section-title__text section-title__text">На сайте представлена ​​лишь небольшая часть работ, выполняемых нашей компанией. За 14 лет работы на строительном рынке мы осчастливили более 1000 семей</p>
             <!-- /.section-title__description -->
@@ -204,7 +204,7 @@
         </div>
         <!-- /.container -->
       </section>
-      <!-- /.section section--dark projects -->
+      <!-- /.section section- -dark projects -->
 
       <section class="section control">
         <div class="container">
@@ -224,19 +224,19 @@
 
           <p class="section__text control__text wow fadeInUp" data-wow-delay="0.1s">На каждом объекте установлена ​​камера, которая транслирует ход работы на часах. В любой момент вы можете зайти на наш сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.</p>
             
-          <form action="" class="form control__form wow fadeInUp" data-wow-delay="0.1s">
+          <form action="#" class="form control__form wow fadeInUp" data-wow-delay="0.1s">
     
             <div class="control__form__input-box">
-              <label for="user-name" class="label form__label control__form__label">Имя</label>
-              <input type="text" name="userName" class="input form__input control__form__input-box__input" id="user-name" placeholder="Как вас зовут:">
+              <label for="control-user-name" class="label form__label control__form__label">Имя</label>
+              <input type="text" name="userName" class="input form__input control__form__input-box__input" id="control-user-name" placeholder="Как вас зовут:">
             </div>
-            <!-- /.form-box--column -->
+            <!-- /.form-box- -column -->
 
             <div class="control__form__input-box">
-              <label for="user-phone" class="label form__label control__form__label">Телефон</label>
-              <input type="tel" name="userPhone" class="input form__input control__form__input-box__input" id="user-phone" placeholder="Ваш номер телефона:">
+              <label for="control-user-phone" class="label form__label control__form__label">Телефон</label>
+              <input type="tel" name="userPhone" class="input form__input control__form__input-box__input" id="control-user-phone" placeholder="Ваш номер телефона:">
             </div>
-            <!-- /.form-box--column -->
+            <!-- /.form-box- -column -->
   
             <div class="control__form__button-box">
               <button class="button button--primary control__form__button-box__button">Отправить</button>
@@ -500,29 +500,29 @@
          
           <h3 class="footer__title">Остались вопросы?</h3>
          
-          <form action="" class="form footer__form">
+          <form action="#" class="form footer__form">
             
             <div class="input-box footer__input-box">
-              <label for="user-name" class="label form__label label--light">Имя</label>
-              <input type="text" name="userName" class="input input--dark form__input footer__input" id="user-name" placeholder="Как вас зовут:">
+              <label for="footer-user-name" class="label form__label label--light">Имя</label>
+              <input type="text" name="userName" class="input input--dark form__input footer__input" id="footer-user-name" placeholder="Как вас зовут:">
             </div>
             <!-- /.input-box footer__input-box -->
 
             <div class="input-box footer__input-box">
-              <label for="user-phone" class="label form__label label--light">Телефон</label>
-              <input type="tel" name="userPhone" class="input input--dark form__input footer__input" id="user-phone" placeholder="Ваш номер телефона:">
+              <label for="footer-user-phone" class="label form__label label--light">Телефон</label>
+              <input type="tel" name="userPhone" class="input input--dark form__input footer__input" id="footer-user-phone" placeholder="Ваш номер телефона:">
             </div>
             <!-- /.input-box footer__input-box -->
 
             <div class="input-box footer__input-box footer__input-box--full-width">
-              <label for="user-question" class="label form__label label--light">Вопрос</label>
-              <input type="text" class="input input--dark form__input footer__input" id="user-question" placeholder="Я хочу спросить">
+              <label for="footer-user-question" class="label form__label label--light">Вопрос</label>
+              <input type="text" class="input input--dark form__input footer__input" id="footer-user-question" placeholder="Я хочу спросить">
             </div>
             <!-- /.input-box footer__input-box -->
 
             <div class="policy footer__policy">
-              <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
-              <label for="policy-checkbox" class="policy__label policy__label--center">Я соглашаюсь с обработкой данных</label>
+              <input type="checkbox" name="policy-checkbox" id="footer-policy-checkbox" class="policy__checkbox" checked>
+              <label for="footer-policy-checkbox" class="policy__label policy__label--center">Я соглашаюсь с обработкой данных</label>
             </div>
   
             <button class="button button--primary footer__button">Отправить</button>
@@ -575,7 +575,7 @@
       <!-- /.footer__menu -->
 
     </footer>
-    <!-- /.footer section section--dark -->
+    <!-- /.footer section section- -dark -->
 
 
     <div class="modal">
@@ -583,7 +583,7 @@
       <div class="modal__dialog">
         <button class="modal__close"></button>
         <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами </h3>
-        <form action="send.php" method="POST" class="form modal__form">
+        <form action="send.php" method="POST" id="modal-form" class="form modal__form">
 
           <div class="input-box modal__input-box">
             <label for="user-name" class="label form__label label--light">Имя</label>
@@ -615,6 +615,22 @@
       <!-- /.modal_dialog -->
     </div>
     <!-- /.modal -->
+
+    <div class="modal modal-thank">
+      <div class="modal__over"></div>
+      <div class="modal__dialog modal-thank__dialog">
+        <button class="modal__close"></button>
+        <h3 class="modal__title">Наш менеджер свяжется с вами!</h3>
+        <h3 class="modal__title">Подпишитесь на нас в социальных сетях</h3>
+        <div class="social">
+          <a href="#" class="social-email"><img src="img/footer/email.svg" alt="email"></a>
+          <a href="#" class="social-instagram"><img src="img/footer/instagram.svg" alt="instagram"></a>
+        </div>
+        <!-- /.social -->
+      </div>
+      <!-- /.modal_dialog -->
+    </div>
+    <!-- /.modal-thank -->
     
     <button class="scroll-up"></button>
   
@@ -626,7 +642,7 @@
   <script src="js/wow.min.js"></script>
   <script src="js/jquery.validate.min.js"></script>
   <script src="js/jquery.mask.min.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=28850313-e4da-46be-8c91-b9c747dedcf8&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=28850313-e4da-46be-8c91-b9c747dedcf8&lang=ru_RU"></script>
   <script src="js/main.js"></script>
   </body>
 </html>
