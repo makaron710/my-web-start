@@ -5,7 +5,7 @@
   url('../css/fonts/futura/FuturaBookC.woff2') format('woff');
   font-weight: 200;
   font-style: normal;
-  font-display: wrap;
+  font-display: swap; //Браузер будет подгружать стандартные шрифты
   }
   @font-face {
     font-family: 'Futura Demi';
@@ -14,5 +14,5 @@
     url('../css/fonts/futura/FuturaDemiC.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: wrap;
+    font-display: swap;
   }
