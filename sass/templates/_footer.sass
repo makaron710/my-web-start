@@ -66,7 +66,7 @@
   margin: auto
   width: 73px
   margin-bottom: 3.071rem
-#map
+#map  
   width: 66rem
   height: 33.2rem
   margin: auto
@@ -76,6 +76,42 @@
   #map
     max-width: 100%
 @media screen and ( max-width: 576px )
+  html
+    background-color: $dark
   #map
-    max-height: 18rem
+    height: 21.4rem
+    margin-bottom: 1.8rem
+  .footer
+    background: $dark
+    margin-top: -0.5px
+    &__container
+      display: flex
+      flex-direction: column
+    &__section
+      &-title
+        order: 1
+        &__heading
+          font-size: 1.5rem
+          line-height: 2.1rem
+    &__wrap
+      width: 100%
+      padding: 0
+      background: $dark
+    &__form
+      width: 100%
+    &__input
+      &-box
+        flex-basis: 100%
+    &__policy
+      margin-left: 0
+      &__label
+        justify-content: flex-start
+    &__button
+      width: 100%
+    &__menu
+      display: none
+  .social
+    width: 100px
+    img
+      width: 39px
 

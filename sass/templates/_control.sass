@@ -1,4 +1,5 @@
 .control
+  margin-top: -0.5px
   &__section
     &-title
       margin-bottom: 2.214rem
@@ -96,38 +97,57 @@
   .control
     background-color: $dark
     color: $light
+    padding-top: 60px
+    padding-bottom: 0
+    &__section
+      &-title
+        margin-top: -33rem
     &__text
-      font-size: 1rem
-      line-height: 169.8%
+      font-size: 1.15rem
+      line-height: 2rem
+      margin-top: 2.071rem
+      margin-bottom: 2.657rem
+      font-weight: normal
+      &::before
+        margin-top: 2.7rem
+        margin-bottom: 1.229rem
     &__video
       width: 100%
       height: 17.25rem
-    &__text
-      margin-bottom: 1.857rem
     &__form
       width: 100%
       &__label
         color: rgba($light, 0.5)
+        font-size: 1.171rem
       &__input
         &-box
           flex-basis: 100%
-          margin-bottom: 4.5rem
+          margin-bottom: 5.2rem
           &__input
+            margin-top: -2px
             width: 100%
             background: transparent
             color: $light
             border-bottom:  1px solid rgba($light, 0.15)
+            font-size: 1.486rem
             &::placeholder
               color: $light
       &__policy
         margin-top: -2.67rem
-        margin-bottom: 4.459rem
+        margin-bottom: 5.329rem
+        &__label
+          font-size: 1.343rem
       &__button
         &-box
           display: flex
           flex-basis: 100%
           justify-content: center
           order: 3
+          &__button
+            max-height: 5rem
+            padding: 1.457rem 1.5rem
+            margin-bottom: -25px
+            font-size: 1.271rem
 @media screen and ( max-width: 414px )
   .control
     &__form

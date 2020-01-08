@@ -1,5 +1,5 @@
 .projects
-  padding-top: 12.597rem
+  padding-top: 11rem
   padding-bottom: 30rem
   background: $dark url('../img/projects/bg-projects.png') no-repeat center / 100%
   &__section-title
@@ -84,3 +84,25 @@
         width: 100%
         margin-top: 0
         order: -1 
+
+@media screen and ( max-width: 576px )
+  .projects
+    padding-top: 0.97rem
+    &__swiper
+      &-slide
+        &__image
+          margin-top: 0
+  .section
+    &-title
+      &__text
+        font-size: 1.25rem
+        margin-bottom: 3rem
+      &__heading
+        &--primary
+          margin-bottom: 1.57rem
+  .swiper
+    &-slide
+      max-height: 16.667rem
+      width: 100%
+      overflow: hidden
+      margin-bottom: 3rem
