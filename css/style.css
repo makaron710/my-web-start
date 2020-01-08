@@ -465,7 +465,8 @@ input.invalid {
     width: 90.4%; } }
 
 *, *:before, *:after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline-style: none; }
 
 html {
   font-size: 14px; }
