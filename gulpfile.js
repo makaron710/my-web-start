@@ -90,7 +90,7 @@ function imgMin(done) {
             key: 'h0pJDThTqVTvbqb1CHhpPMrFlsfs7rpY'
         }))
         .pipe(dest('dist/img/'));
-    src(['img/**/**.svg', '!img/**/**.{png,jpg,jpeg}'])
+    src(['img/**/**.ico', 'img/**/**.svg', '!img/**/**.{png,jpg,jpeg}'])
         .pipe(dest('dist/img/'));
     done();
 };

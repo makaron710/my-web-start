@@ -417,8 +417,14 @@ template {
     -webkit-box-pack: center;
     justify-content: center; }
 
+.logo-link {
+  text-decoration: none; }
+
 label.invalid {
-  color: tomato; }
+  color: tomato;
+  position: absolute;
+  margin-top: 0.12rem;
+  margin-left: 4rem; }
 
 input.invalid {
   border-bottom: 1px solid tomato; }
@@ -1125,8 +1131,7 @@ img {
     background: #131313 url("../img/modal/bg-modal.png") no-repeat center/100%;
     max-width: 36.143rem;
     max-height: 36.357rem;
-    color: #fff;
-    overflow-y: auto; }
+    color: #fff; }
   .modal__title {
     margin: 0;
     margin-bottom: 2.429rem;
@@ -1180,6 +1185,26 @@ img {
     .modal-thank--visible {
       opacity: 1;
       visibility: visible; }
+
+@media screen and (min-width: 320px) and (max-width: 768px) and (orientation: landscape) {
+  .modal__dialog {
+    overflow-y: auto;
+    max-height: 100vh;
+    padding-top: 10rem; } }
+
+@media screen and (max-width: 375px) {
+  .modal__dialog {
+    max-width: 100%; }
+  .modal__button {
+    width: 100%; } }
+
+@media screen and (min-width: 320px) and (max-width: 320px) {
+  .modal__dialog {
+    max-width: 100%; }
+  .modal__form {
+    width: 100%; }
+  .modal__input {
+    width: 70%; } }
 
 .projects {
   padding-top: 11rem;

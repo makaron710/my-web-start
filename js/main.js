@@ -73,6 +73,13 @@ $(document).ready(function(){
     }
   });
 
+  $(() => {
+    $('.hero__scroll-down').click(() => {
+			$('html').animate({
+				scrollTop:$('#section-projects').offset().top+50
+			}, 500);
+    });
+  });
 
   // кнопка прокрутки вверх
   $(() => {
@@ -90,8 +97,8 @@ $(document).ready(function(){
 			$('html').animate({
 				scrollTop:0
 			}, 500);
-
-		});
+    });
+    
   });
   
 
@@ -108,7 +115,7 @@ $(document).ready(function(){
       prevEl: '.swiper-button-prev',
     },
   })
-
+// Позиционирование стрелок слайдера
   var next = $('.swiper-button-next');
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
@@ -133,6 +140,14 @@ $(document).ready(function(){
     $(this).validate({
       // Класс, который будет присваиваться для элементов (полей) с ошибкой
       errorClass: "invalid",
+      onclick: true,
+      // Error label устанавливается у соответствующего label
+/*       errorLabelContainer: ".label-error",
+      wrapper: "label",
+      submitHandler: function() { alert("Submitted!") }, */
+/*       errorPlacement: function(error, element) {
+        error.appendTo("label");
+      }, */
 
       // Правила
       rules: {
@@ -149,19 +164,21 @@ $(document).ready(function(){
           email: true
         },
         policyCheckbox: {
-          required: true
+          required: true,
+          minlength: 1
         }
-      }, // сообщения
+      }, 
+      // сообщения
       messages: {
         userName: {
-          required: " - Заполните поле",
-          minlength: "Имя должно быть не короче 2 символов",
-          maxlength: "Имя должно быть не длиннее 15 символов"
+          required: "&nbsp;- Заполните поле",
+          minlength: "&nbsp;- Имя должно быть не короче 2 символов",
+          maxlength: "&nbsp;- Имя должно быть не длиннее 15 символов"
         },
-        userPhone: " - Заполните поле",
+        userPhone: "&nbsp;- Заполните поле",
         userEmail: {
-          required: " - Заполните поле",
-          email: "Введите корректный email (name@domain.com)"
+          required: "&nbsp;- Заполните поле",
+          email: "&nbsp;- Введите корректный email (name@domain.com)"
         }
       },
 

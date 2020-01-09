@@ -147,6 +147,9 @@ $(document).ready(function(){
         userEmail: {
           required: true,
           email: true
+        },
+        policyCheckbox: {
+          required: true
         }
       }, // сообщения
       messages: {
@@ -186,6 +189,7 @@ $(document).ready(function(){
 
   // Маска для телефона
   $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"});
+  $('[type=tel-text-mask]').mask('+7(000) 000-00-00');
 
 // End
 });
@@ -208,7 +212,7 @@ function init(){
   var myMap = new ymaps.Map("map", {
     center: [47.233497, 39.691180],
     zoom: 18,
-    controls: ['routeButtonControl']
+    controls: ['routeButtonControl', 'zoomControl']
   }, {
       searchControlProvider: 'yandex#search'
   }),
@@ -233,8 +237,9 @@ function init(){
         // её "ножки" (точки привязки).
         iconImageOffset: [-10, -50]
     });
-
   myMap.geoObjects.add(myPlacemark)
+
+  myMap.behaviors.disable('scrollZoom'); // Отключение масштабирования прокруткой
 
   // Добавим элемент управления (построитель маршрута) в левый угол карты
   // и зададим начальную и конечную точки маршрута.
