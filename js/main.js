@@ -73,6 +73,7 @@ $(document).ready(function(){
     }
   });
 
+  // Кнопка "Листайте вниз"
   $(() => {
     $('.hero__scroll-down').click(() => {
 			$('html').animate({
@@ -140,7 +141,7 @@ $(document).ready(function(){
     $(this).validate({
       // Класс, который будет присваиваться для элементов (полей) с ошибкой
       errorClass: "invalid",
-      onclick: true,
+      onclick: false,
       // Error label устанавливается у соответствующего label
 /*       errorLabelContainer: ".label-error",
       wrapper: "label",
@@ -157,7 +158,10 @@ $(document).ready(function(){
           maxlength: 15
         },     
         // строчное правило
-        userPhone: "required",
+        userPhone: {
+          required: true,
+          minlength: 17
+        },
         // правило-объект (блок)
         userEmail: {
           required: true,
@@ -172,13 +176,13 @@ $(document).ready(function(){
       messages: {
         userName: {
           required: "&nbsp;- Заполните поле",
-          minlength: "&nbsp;- Имя должно быть не короче 2 символов",
-          maxlength: "&nbsp;- Имя должно быть не длиннее 15 символов"
+          minlength: "&nbsp;- Должно быть не менее 2 символов",
+          maxlength: "&nbsp;- Должно быть не более 15 символов"
         },
         userPhone: "&nbsp;- Заполните поле",
         userEmail: {
           required: "&nbsp;- Заполните поле",
-          email: "&nbsp;- Введите корректный email (name@domain.com)"
+          email: "&nbsp;- Введите корректный email"
         }
       },
 
@@ -190,7 +194,7 @@ $(document).ready(function(){
           data: $(form).serialize(), // Склеивание всех данных с формы
           success: function (response) { // Сценарий для удачной отправки
             console.log('данные ' + response);
-            $('#modal-form')[0].reset();
+            $('.form')[0].reset();
             $('.modal').removeClass('modal--visible');
             $('.modal-thank').toggleClass('modal-thank--visible');
           },
@@ -206,7 +210,7 @@ $(document).ready(function(){
 
   // Маска для телефона
   $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"});
-  $('[type=tel-text-mask]').mask('+7(000) 000-00-00');
+  $('[type=telTextHold]').mask('+7(000) 000-00-00');
 
 // End
 });
@@ -271,4 +275,20 @@ function init(){
         to: [47.233497, 39.691180],
         type: "auto"      
   });
+}
+
+// Видео с youtube
+var player;
+$('.video__play').on('click', function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '450',
+    width: '100%',
+    videoId: 'jfBkqXE5qjQ',
+    events: {
+      'onReady': videoPlay
+    }
+  });
+})
+function videoPlay(event) {
+  event.target.playVideo();
 }

@@ -331,15 +331,24 @@ template {
     font-family: 'Futura Demi';
     color: #fff;
     font-weight: 500;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
-    -webkit-transition: box-shadow 0.3s;
-    transition: box-shadow 0.3s; }
+    box-shadow: 0px 15px 30px rgba(115, 81, 23, 0.4);
+    -webkit-transition: box-shadow 0.3s, background-color 0.5s, color 0.5s;
+    transition: box-shadow 0.3s, background-color 0.5s, color 0.5s; }
     .button--primary:hover {
-      box-shadow: none; }
+      box-shadow: none;
+      background-color: #735117;
+      color: #fff; }
   .button--outline {
     border: 1px solid #fff;
     color: #fff;
-    background: transparent; }
+    background: transparent;
+    box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.4);
+    -webkit-transition: box-shadow 0.3s, background-color 0.5s, color 0.5s;
+    transition: box-shadow 0.3s, background-color 0.5s, color 0.5s; }
+    .button--outline:hover {
+      box-shadow: none;
+      background-color: #fff;
+      color: #131313; }
 
 .label {
   font-family: 'Futura Book';
@@ -420,6 +429,15 @@ template {
 .logo-link {
   text-decoration: none; }
 
+.card__pricetag {
+  box-shadow: 0px 15px 30px rgba(115, 81, 23, 0.4);
+  -webkit-transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+  transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; }
+  .card__pricetag:hover {
+    box-shadow: none;
+    background-color: #735117;
+    color: #fff; }
+
 label.invalid {
   color: tomato;
   position: absolute;
@@ -428,6 +446,30 @@ label.invalid {
 
 input.invalid {
   border-bottom: 1px solid tomato; }
+
+@media screen and (max-width: 992px) {
+  .card__pricetag {
+    box-shadow: 0px 15px 30px rgba(115, 81, 23, 0.4);
+    background-color: #E3B873; }
+    .card__pricetag:hover {
+      box-shadow: 0px 15px 30px rgba(115, 81, 23, 0.4);
+      background-color: #E3B873; }
+  .button--primary {
+    background-color: #E3B873;
+    color: #fff;
+    box-shadow: 0px 15px 30px rgba(115, 81, 23, 0.4); }
+    .button--primary:hover {
+      background-color: #E3B873;
+      color: #fff;
+      box-shadow: 0px 15px 30px rgba(115, 81, 23, 0.4); }
+  .button--outline {
+    color: #fff;
+    background: transparent;
+    box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.4); }
+    .button--outline:hover {
+      color: #fff;
+      background: transparent;
+      box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.4); } }
 
 .container {
   width: 86%;
@@ -681,7 +723,8 @@ img {
   position: relative;
   width: 25%;
   margin: auto;
-  top: 5px; }
+  top: 5px;
+  cursor: pointer; }
 
 @media screen and (max-width: 768px) {
   .control__form__input-box {

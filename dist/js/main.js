@@ -73,6 +73,14 @@ $(document).ready(function(){
     }
   });
 
+  // Кнопка "Листайте вниз"
+  $(() => {
+    $('.hero__scroll-down').click(() => {
+			$('html').animate({
+				scrollTop:$('#section-projects').offset().top+50
+			}, 500);
+    });
+  });
 
   // кнопка прокрутки вверх
   $(() => {
@@ -90,8 +98,8 @@ $(document).ready(function(){
 			$('html').animate({
 				scrollTop:0
 			}, 500);
-
-		});
+    });
+    
   });
   
 
@@ -108,7 +116,7 @@ $(document).ready(function(){
       prevEl: '.swiper-button-prev',
     },
   })
-
+// Позиционирование стрелок слайдера
   var next = $('.swiper-button-next');
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
@@ -133,6 +141,14 @@ $(document).ready(function(){
     $(this).validate({
       // Класс, который будет присваиваться для элементов (полей) с ошибкой
       errorClass: "invalid",
+      onclick: false,
+      // Error label устанавливается у соответствующего label
+/*       errorLabelContainer: ".label-error",
+      wrapper: "label",
+      submitHandler: function() { alert("Submitted!") }, */
+/*       errorPlacement: function(error, element) {
+        error.appendTo("label");
+      }, */
 
       // Правила
       rules: {
@@ -142,26 +158,31 @@ $(document).ready(function(){
           maxlength: 15
         },     
         // строчное правило
-        userPhone: "required",
+        userPhone: {
+          required: true,
+          minlength: 17
+        },
         // правило-объект (блок)
         userEmail: {
           required: true,
           email: true
         },
         policyCheckbox: {
-          required: true
+          required: true,
+          minlength: 1
         }
-      }, // сообщения
+      }, 
+      // сообщения
       messages: {
         userName: {
-          required: " - Заполните поле",
-          minlength: "Имя должно быть не короче 2 символов",
-          maxlength: "Имя должно быть не длиннее 15 символов"
+          required: "&nbsp;- Заполните поле",
+          minlength: "&nbsp;- Должно быть не менее 2 символов",
+          maxlength: "&nbsp;- Должно быть не более 15 символов"
         },
-        userPhone: " - Заполните поле",
+        userPhone: "&nbsp;- Заполните поле",
         userEmail: {
-          required: " - Заполните поле",
-          email: "Введите корректный email (name@domain.com)"
+          required: "&nbsp;- Заполните поле",
+          email: "&nbsp;- Введите корректный email"
         }
       },
 
@@ -173,7 +194,7 @@ $(document).ready(function(){
           data: $(form).serialize(), // Склеивание всех данных с формы
           success: function (response) { // Сценарий для удачной отправки
             console.log('данные ' + response);
-            $('#modal-form')[0].reset();
+            $('.form')[0].reset();
             $('.modal').removeClass('modal--visible');
             $('.modal-thank').toggleClass('modal-thank--visible');
           },
@@ -189,7 +210,7 @@ $(document).ready(function(){
 
   // Маска для телефона
   $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"});
-  $('[type=tel-text-mask]').mask('+7(000) 000-00-00');
+  $('[type=telTextHold]').mask('+7(000) 000-00-00');
 
 // End
 });
@@ -254,4 +275,20 @@ function init(){
         to: [47.233497, 39.691180],
         type: "auto"      
   });
+}
+
+// Видео с youtube
+var player;
+$('.video__play').on('click', function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '450',
+    width: '100%',
+    videoId: 'jfBkqXE5qjQ',
+    events: {
+      'onReady': videoPlay
+    }
+  });
+})
+function videoPlay(event) {
+  event.target.playVideo();
 }

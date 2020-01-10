@@ -11,14 +11,24 @@
     font-family: 'Futura Demi'
     color: $light
     font-weight: 500
-    box-shadow: 0px 5px 15px rgba($primary, 0.2)
-    transition: box-shadow 0.3s
+    box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+    transition: box-shadow 0.3s, background-color 0.5s, color 0.5s
     &:hover
       box-shadow: none
+      background-color: #735117
+      color: $light
+
   &--outline
     border: 1px solid $light
     color: $light
     background: transparent
+    box-shadow: 0px 15px 30px rgba($light, 0.4)
+    transition: box-shadow 0.3s, background-color 0.5s, color 0.5s
+    &:hover
+      box-shadow: none
+      background-color: $light
+      color: $dark
+
 .label
   font-family: 'Futura Book'
   font-weight: normal
@@ -76,6 +86,15 @@
 .logo-link
   text-decoration: none
 
+.card
+  &__pricetag
+    box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+    transition: box-shadow 0.3s, background-color 0.3s, color 0.3s
+    &:hover
+      box-shadow: none
+      background-color: #735117
+      color: $light
+
 label
   &.invalid
     color: tomato
@@ -86,3 +105,28 @@ input
   &.invalid
     border-bottom: 1px solid tomato
 
+@media screen and ( max-width: 992px )
+  .card
+    &__pricetag
+      box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+      background-color: $primary
+      &:hover
+        box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+        background-color: $primary
+  .button
+    &--primary
+      background-color: $primary
+      color: $light
+      box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+      &:hover
+        background-color: $primary
+        color: $light
+        box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+    &--outline
+      color: $light
+      background: transparent
+      box-shadow: 0px 15px 30px rgba($light, 0.4)
+      &:hover
+        color: $light
+        background: transparent
+        box-shadow: 0px 15px 30px rgba($light, 0.4)

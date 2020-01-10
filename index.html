@@ -52,7 +52,7 @@
           <!-- /.hero__content -->
         </div>
         <!-- /.container -->
-        <a href="#" class="hero__scroll-down">листайте вниз</a>
+        <a href="#" class="hero__scroll-down wow fadeInUp" data-wow-delay="0.1s" >листайте вниз</a>
       </section>
       <!-- /.hero -->
 
@@ -221,9 +221,11 @@
             <!-- /.section-title__image -->
           </div>
           <!-- /.section-title -->
-          <div class="control__video video wow fadeInUp" data-wow-delay="0.1s">
-              <img src="img/control/play-button.svg" alt="play-button" class="video__play">
+          <div class="control__video video" id="player">
+            <script src="https://www.youtube.com/iframe_api"></script>
+            <img src="img/control/play-button.svg" alt="play-button" class="video__play">
           </div>
+
           <!-- /.control__video video -->
 
           <p class="section__text control__text wow fadeInUp" data-wow-delay="0.1s">На каждом объекте установлена ​​камера, которая транслирует ход работы на часах. В любой момент вы можете зайти на наш сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.</p>
@@ -238,7 +240,7 @@
 
             <div class="control__form__input-box">
               <label for="control-user-phone" class="label form__label control__form__label">Телефон</label>
-              <input type="tel-text-mask" name="userPhone" class="input form__input control__form__input-box__input" id="control-user-phone" placeholder="Ваш номер телефона:">
+              <input type="tel" name="userPhone" class="input form__input control__form__input-box__input" id="control-user-phone" placeholder="Ваш номер телефона:">
             </div>
             <!-- /.form-box- -column -->
   
@@ -514,7 +516,7 @@
 
             <div class="input-box footer__input-box">
               <label for="footer-user-phone" class="label form__label label--light">Телефон</label>
-              <input type="tel-text-mask" name="userPhone" class="input input--dark form__input footer__input" id="footer-user-phone" placeholder="Ваш номер телефона:">
+              <input type="tel" name="userPhone" class="input input--dark form__input footer__input" id="footer-user-phone" placeholder="Ваш номер телефона:">
             </div>
             <!-- /.input-box footer__input-box -->
 
