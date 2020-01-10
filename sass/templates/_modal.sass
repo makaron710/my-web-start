@@ -36,9 +36,9 @@
     align-items: center
     flex-direction: column
     position: relative
-    background: $dark url('../img/modal/bg-modal.png') no-repeat center / 100%
+    background: $dark url('../img/modal/bg-modal.png') no-repeat center / cover
     max-width: 36.143rem
-    max-height: 36.357rem
+
     color: $light
   &__title
     margin: 0
@@ -89,20 +89,24 @@
       opacity: 1
       visibility: visible
       
-@media screen and ( min-width: 320px) and (max-width: 768px ) and (orientation: landscape)
+@media screen and (max-width: 812px ) and (orientation: landscape)
   .modal
-    &__dialog
-      overflow-y: auto
-      max-height: 100vh
-      padding-top: 10rem
 
-@media screen and ( max-width: 375px )
+    &__dialog
+
+      max-height: 100%
+ 
+      overflow: auto
+
+@media screen and ( max-width: 435px )
   .modal
     &__dialog
       max-width: 100%
     &__button
       width: 100%
-@media screen and ( min-width: 320px) and (max-width: 320px )
+    &__input
+      max-width: 100%
+@media screen and ( min-width: 320px) and (max-width: 350px )
   .modal
     &__dialog
       max-width: 100%
@@ -110,5 +114,10 @@
       width: 100%
     &__input
       width: 70%
+
+
+
+
+
 
 

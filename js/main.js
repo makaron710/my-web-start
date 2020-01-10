@@ -141,7 +141,7 @@ $(document).ready(function(){
     $(this).validate({
       // Класс, который будет присваиваться для элементов (полей) с ошибкой
       errorClass: "invalid",
-      onclick: false,
+      //onclick: false,
       // Error label устанавливается у соответствующего label
 /*       errorLabelContainer: ".label-error",
       wrapper: "label",
@@ -149,6 +149,13 @@ $(document).ready(function(){
 /*       errorPlacement: function(error, element) {
         error.appendTo("label");
       }, */
+      errorPlacement: function (error, element) {
+        if (element.attr("type") == "checkbox") {
+            return element.next('label').append(error);
+        }
+    
+         error.insertAfter($(element));
+    },
 
       // Правила
       rules: {
@@ -168,21 +175,23 @@ $(document).ready(function(){
           email: true
         },
         policyCheckbox: {
-          required: true,
-          minlength: 1
+          required: true
         }
       }, 
       // сообщения
       messages: {
         userName: {
-          required: "&nbsp;- Заполните поле",
-          minlength: "&nbsp;- Должно быть не менее 2 символов",
-          maxlength: "&nbsp;- Должно быть не более 15 символов"
+          required: "* Заполните поле",
+          minlength: "* Должно быть не менее 2 символов",
+          maxlength: "* Должно быть не более 15 символов"
         },
-        userPhone: "&nbsp;- Заполните поле",
+        userPhone: "* Заполните поле",
         userEmail: {
-          required: "&nbsp;- Заполните поле",
-          email: "&nbsp;- Введите корректный email"
+          required: "* Заполните поле",
+          email: "* Введите корректный email"
+        },
+        policyCheckbox: {
+          required: "* Поставте галочку"
         }
       },
 
@@ -194,7 +203,7 @@ $(document).ready(function(){
           data: $(form).serialize(), // Склеивание всех данных с формы
           success: function (response) { // Сценарий для удачной отправки
             console.log('данные ' + response);
-            $('.form')[0].reset();
+            $(form)[0].reset();
             $('.modal').removeClass('modal--visible');
             $('.modal-thank').toggleClass('modal-thank--visible');
           },
@@ -283,7 +292,7 @@ $('.video__play').on('click', function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '450',
     width: '100%',
-    videoId: 'jfBkqXE5qjQ',
+    videoId: 'cD0qpac2gqw',
     events: {
       'onReady': videoPlay
     }
@@ -292,3 +301,4 @@ $('.video__play').on('click', function onYouTubeIframeAPIReady() {
 function videoPlay(event) {
   event.target.playVideo();
 }
+

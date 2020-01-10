@@ -11,7 +11,7 @@
     font-family: 'Futura Demi'
     color: $light
     font-weight: 500
-    box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+    box-shadow: 0px 5px 15px rgba($primary, 0.3)
     transition: box-shadow 0.3s, background-color 0.5s, color 0.5s
     &:hover
       box-shadow: none
@@ -22,10 +22,8 @@
     border: 1px solid $light
     color: $light
     background: transparent
-    box-shadow: 0px 15px 30px rgba($light, 0.4)
-    transition: box-shadow 0.3s, background-color 0.5s, color 0.5s
+    transition: background-color 0.5s, color 0.5s
     &:hover
-      box-shadow: none
       background-color: $light
       color: $dark
 
@@ -44,7 +42,10 @@
   padding-top: 0.4rem
   padding-bottom: 0.5rem
   &::placeholder
+    opacity: 1
     margin-bottom: 0.643rem
+  &::-moz-placeholder, :-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder
+    opacity: 1
   &--dark
     color: $light
     font-weight: 500
@@ -55,12 +56,14 @@
     padding-top: 0.4rem
     padding-bottom: 0.5rem
     &::placeholder
+      opacity: 1
       color: $light
       margin-bottom: 0.643rem
+    &::-moz-placeholder, :-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder
+      opacity: 1
 .policy
   &__checkbox
     opacity: 0
-    display: none
     &:checked +
       .policy
         &__label
@@ -88,10 +91,8 @@
 
 .card
   &__pricetag
-    box-shadow: 0px 15px 30px rgba(#735117, 0.4)
-    transition: box-shadow 0.3s, background-color 0.3s, color 0.3s
+    transition: background-color 0.3s, color 0.3s
     &:hover
-      box-shadow: none
       background-color: #735117
       color: $light
 
@@ -99,8 +100,9 @@ label
   &.invalid
     color: tomato
     position: absolute
-    margin-top: 0.12rem
-    margin-left: 4rem
+    margin-top: -1.4rem
+    margin-left: 0
+    font-size: 1rem
 input
   &.invalid
     border-bottom: 1px solid tomato
@@ -108,25 +110,21 @@ input
 @media screen and ( max-width: 992px )
   .card
     &__pricetag
-      box-shadow: 0px 15px 30px rgba(#735117, 0.4)
       background-color: $primary
       &:hover
-        box-shadow: 0px 15px 30px rgba(#735117, 0.4)
-        background-color: $primary
+      background-color: $primary
   .button
     &--primary
       background-color: $primary
       color: $light
-      box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+      box-shadow: 0px 5px 15px rgba($primary, 0.3)
       &:hover
         background-color: $primary
         color: $light
-        box-shadow: 0px 15px 30px rgba(#735117, 0.4)
+        box-shadow: 0px 5px 15px rgba($primary, 0.3)
     &--outline
       color: $light
       background: transparent
-      box-shadow: 0px 15px 30px rgba($light, 0.4)
       &:hover
         color: $light
         background: transparent
-        box-shadow: 0px 15px 30px rgba($light, 0.4)
