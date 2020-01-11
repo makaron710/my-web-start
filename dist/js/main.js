@@ -36,126 +36,129 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 //jQuery
 //проверка прогрузки html
-$(document).ready(function(){
+'use strict';
+
+$(document).ready(function () {
+  var _this = this;
 
   //объект документа с классом modal
   var modal = $('.modal'),
+
   //все объекты документа с селектором data-toggle=modal
-      modalBtn = $('[data-toggle=modal]'),
+  modalBtn = $('[data-toggle=modal]'),
+
   // объект документа с класссом modal_close
-      closeBtn = $('.modal__close'),
+  closeBtn = $('.modal__close'),
+
   // объект документа с класссом modal__over
-      closeOver = $('.modal__over');
+  closeOver = $('.modal__over');
 
   //функция toggle переключает наличие/отсутствие класса
-    var switchModal = () => {
+  var switchModal = function switchModal() {
     modal.toggleClass('modal--visible');
   };
 
   //для modalBtn отслеживать событие "клик"
   //при наступлении вызвать функццию switchModal чтобы открыть окно
   modalBtn.on('click', switchModal);
-  
+
   // при клике по объекту closeBtn вызвать функццию switchModal чтобы закрыть окно
-  closeBtn.on('click', () => {
+  closeBtn.on('click', function () {
     $('.modal').removeClass('modal--visible modal-thank--visible');
   });
 
   // при клике по объекту closeBtn вызвать функццию switchModal чтобы закрыть окно
-  closeOver.on('click', () => {
+  closeOver.on('click', function () {
     $('.modal').removeClass('modal--visible modal-thank--visible');
   });
 
   // при нажатии клавиши escape - удаление класса .modal--visible
-  $(document).keyup(function(e) {
+  $(document).keyup(function (e) {
     if (e.key === "Escape" || e.keyCode === 27) {
       modal.removeClass('modal--visible');
     }
   });
 
   // Кнопка "Листайте вниз"
-  $(() => {
-    $('.hero__scroll-down').click(() => {
-			$('html').animate({
-				scrollTop:$('#section-projects').offset().top+50
-			}, 500);
+  $(function () {
+    $('.hero__scroll-down').click(function () {
+      $('html').animate({
+        scrollTop: $('#section-projects').offset().top + 50
+      }, 500);
     });
   });
 
   // кнопка прокрутки вверх
-  $(() => {
-		$('.scroll-up').hide();
+  $(function () {
+    $('.scroll-up').hide();
 
-		$(window).scroll(() => {
-			if ($(this).scrollTop() > 600){
-				$('.scroll-up').fadeIn();
-			} else{
-				$('.scroll-up').fadeOut();
+    $(window).scroll(function () {
+      if ($(_this).scrollTop() > 600) {
+        $('.scroll-up').fadeIn();
+      } else {
+        $('.scroll-up').fadeOut();
       }
-		});
-
-		$('.scroll-up').click(() => {
-			$('html').animate({
-				scrollTop:0
-			}, 500);
     });
-    
+
+    $('.scroll-up').click(function () {
+      $('html').animate({
+        scrollTop: 0
+      }, 500);
+    });
   });
-  
 
   //initialize swiper when document ready
-  var mySwiper = new Swiper ('.swiper-container', {
+  var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
     pagination: {
       el: '.swiper-pagination',
-      type: 'bullets',
+      type: 'bullets'
     },
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  })
-// Позиционирование стрелок слайдера
+      prevEl: '.swiper-button-prev'
+    }
+  });
+  // Позиционирование стрелок слайдера
   var next = $('.swiper-button-next');
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
   var container = $('.container');
   var wind = $(window);
 
-  bullets.css('left', prev.width()+8);
-  next.css('left', prev.width()+8+bullets.width());
+  bullets.css('left', prev.width() + 8);
+  next.css('left', prev.width() + 8 + bullets.width());
 
-  if (wind.width()<768) {
-    prev.css('left', (container.width()-prev.width()-8-bullets.width()-next.width())/2+8);
-    bullets.css('left', (container.width()-prev.width()-8-bullets.width()-next.width())/2+prev.width()+8);
-    next.css('left', ((container.width()-prev.width()-8-bullets.width()-next.width())/2)+prev.width()+8+bullets.width());
+  if (wind.width() < 992) {
+    prev.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + 8);
+    bullets.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + prev.width() + 8);
+    next.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + prev.width() + 8 + bullets.width());
   }
 
-// Иинициализация wow
+  // Иинициализация wow
   new WOW().init();
 
-  
-// Валидация формы
-  $('.form').each( function validateForm() {
+  // Валидация формы
+  $('.form').each(function validateForm() {
     $(this).validate({
       // Класс, который будет присваиваться для элементов (полей) с ошибкой
       errorClass: "invalid",
       //onclick: false,
       // Error label устанавливается у соответствующего label
-/*       errorLabelContainer: ".label-error",
-      wrapper: "label",
-      submitHandler: function() { alert("Submitted!") }, */
-/*       errorPlacement: function(error, element) {
-        error.appendTo("label");
-      }, */
-      errorPlacement: function (error, element) {
+      /*       errorLabelContainer: ".label-error",
+            wrapper: "label",
+            submitHandler: function() { alert("Submitted!") }, */
+      /*       errorPlacement: function(error, element) {
+              error.appendTo("label");
+            }, */
+      errorPlacement: function errorPlacement(error, element) {
         if (element.attr("type") == "checkbox") {
-            return element.next('label').append(error);
+          return element.next('label').append(error);
         }
-    
-         error.insertAfter($(element));
-    },
+
+        error.insertAfter($(element));
+      },
 
       // Правила
       rules: {
@@ -163,7 +166,7 @@ $(document).ready(function(){
           required: true,
           minlength: 2,
           maxlength: 15
-        },     
+        },
         // строчное правило
         userPhone: {
           required: true,
@@ -177,7 +180,7 @@ $(document).ready(function(){
         policyCheckbox: {
           required: true
         }
-      }, 
+      },
       // сообщения
       messages: {
         userName: {
@@ -195,38 +198,39 @@ $(document).ready(function(){
         }
       },
 
-      submitHandler:
-      function (form) {
+      submitHandler: function submitHandler(form) {
         $.ajax({
           type: 'POST',
           url: 'send.php',
           data: $(form).serialize(), // Склеивание всех данных с формы
-          success: function (response) { // Сценарий для удачной отправки
+          success: function success(response) {
+            // Сценарий для удачной отправки
             console.log('данные ' + response);
             $(form)[0].reset();
             $('.modal').removeClass('modal--visible');
             $('.modal-thank').toggleClass('modal-thank--visible');
           },
-          error: function (jqXHR, textStatus, errorThrown) { // Сценарий для не удачной отправки
+          error: function error(jqXHR, textStatus, errorThrown) {
+            // Сценарий для не удачной отправки
             console.error(jqXHR + " " + textStatus);
           }
-          
+
         });
-        return false; 
+        return false;
       }
     });
   });
 
   // Маска для телефона
-  $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"});
+  $('[type=tel]').mask('+7(000) 000-00-00', { placeholder: "+7(___) ___-__-__" });
   $('[type=telTextHold]').mask('+7(000) 000-00-00');
 
-// End
+  // End
 });
 
 // отложенная загрузка яндекс карты
-setTimeout(function(){
-  const elemYaMap = document.createElement('script');
+setTimeout(function () {
+  var elemYaMap = document.createElement('script');
   elemYaMap.async = true;
   elemYaMap.type = 'text/javascript';
   elemYaMap.src = 'https://api-maps.yandex.ru/2.1/?apikey=28850313-e4da-46be-8c91-b9c747dedcf8&lang=ru_RU&onload=init';
@@ -237,37 +241,34 @@ setTimeout(function(){
 // Функция ymaps.ready() будет вызвана, когда
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
 //ymaps.ready(init);
-function init(){
+function init() {
   // Создание карты.
   var myMap = new ymaps.Map("map", {
     center: [47.233497, 39.691180],
     zoom: 18,
     controls: ['routeButtonControl', 'zoomControl']
   }, {
-      searchControlProvider: 'yandex#search'
+    searchControlProvider: 'yandex#search'
   }),
 
   // Создаём макет содержимого.
-  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-  ),
-
-  myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-        hintContent: 'Repair Design',
-        balloonContent: 'Пн - Пт: с 9:00 до 18:00'
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#image',
-        // Своё изображение иконки метки.
-        iconImageHref: 'img/footer/map-marker.png',
-        // Размеры метки.
-        iconImageSize: [26, 42],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [-10, -50]
-    });
-  myMap.geoObjects.add(myPlacemark)
+  MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+    hintContent: 'Repair Design',
+    balloonContent: 'Пн - Пт: с 9:00 до 18:00'
+  }, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#image',
+    // Своё изображение иконки метки.
+    iconImageHref: 'img/footer/map-marker.png',
+    // Размеры метки.
+    iconImageSize: [26, 42],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-10, -50]
+  });
+  myMap.geoObjects.add(myPlacemark);
 
   myMap.behaviors.disable('scrollZoom'); // Отключение масштабирования прокруткой
 
@@ -276,13 +277,12 @@ function init(){
   myMap.controls.add('routeButtonControl', {
     size: "large",
     float: "left",
-    floatIndex: 1000,
+    floatIndex: 1000
   });
-  myMap.controls.get('routeButtonControl')
-    .routePanel.state.set({
-        fromEnabled: true,
-        to: [47.233497, 39.691180],
-        type: "auto"      
+  myMap.controls.get('routeButtonControl').routePanel.state.set({
+    fromEnabled: true,
+    to: [47.233497, 39.691180],
+    type: "auto"
   });
 }
 
@@ -297,8 +297,7 @@ $('.video__play').on('click', function onYouTubeIframeAPIReady() {
       'onReady': videoPlay
     }
   });
-})
+});
 function videoPlay(event) {
   event.target.playVideo();
 }
-

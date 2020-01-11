@@ -60,7 +60,7 @@
       background: url('../img/arrow-prev.svg') no-repeat left / 80%
     &-next
       background: url('../img/arrow-next.svg') no-repeat right / 80%
-@media screen and ( max-width: 759px )
+@media screen and ( max-width: 992px )
   .section
     &-title
       &--left
@@ -80,10 +80,14 @@
         width: 47%
       &-45
         width: 100%
+        justify-content: center
       &-55
         width: 100%
         margin-top: 0
         order: -1 
+  .swiper
+    &__slide
+      justify-content: center
 
 @media screen and ( max-width: 576px )
   .projects

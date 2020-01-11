@@ -114,6 +114,22 @@ img
       outline: none
 
     
-
-
-        
+@media screen and (-ms-high-contrast: active) and (-ms-high-contrast: none)
+  .instagram__link
+    position: relative
+  .instagram__link::after
+    position: absolute
+    top: 7px
+  .hero__content
+    margin: 0
+    top: 100px
+  .hero__scroll-down
+    line-height: 7rem
+  .swiper-pagination-bullets
+    margin-bottom: -15px
+  .video__play
+    position: relative
+    height: 50%
+    margin: auto
+    top: 5px 
+    cursor: pointer
