@@ -126,11 +126,11 @@ $(document).ready(function () {
   var bullets = $('.swiper-pagination');
   var container = $('.container');
   var wind = $(window);
-  
+
   bullets.css('left', prev.width() + 8);
   next.css('left', prev.width() + 8 + bullets.width());
 
-  if (wind.width() <= 974) { // Было 991
+  if (wind.width() < 992) {
     prev.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + 8);
     bullets.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + prev.width() + 8);
     next.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + prev.width() + 8 + bullets.width());
@@ -301,20 +301,3 @@ $('.video__play').on('click', function onYouTubeIframeAPIReady() {
 function videoPlay(event) {
   event.target.playVideo();
 }
-
-
-/*   setTimeout(() => {
-
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
-
-    ym(56971204, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-
-
-  }, 2000) */

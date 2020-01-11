@@ -126,11 +126,11 @@ $(document).ready(function () {
   var bullets = $('.swiper-pagination');
   var container = $('.container');
   var wind = $(window);
-
+  
   bullets.css('left', prev.width() + 8);
   next.css('left', prev.width() + 8 + bullets.width());
 
-  if (wind.width() < 992) {
+  if (wind.width() <= 974) { // Было 991
     prev.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + 8);
     bullets.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + prev.width() + 8);
     next.css('left', (container.width() - prev.width() - 8 - bullets.width() - next.width()) / 2 + prev.width() + 8 + bullets.width());
@@ -222,7 +222,7 @@ $(document).ready(function () {
   });
 
   // Маска для телефона
-  $('[type=tel]').mask('+7(000) 000-00-00', { placeholder: "+7(___) ___-__-__" });
+  $('[type=tel]').mask('+7(000) 000-00-00', { placeholder: "Ваш номер телефона:" });
   $('[type=telTextHold]').mask('+7(000) 000-00-00');
 
   // End
